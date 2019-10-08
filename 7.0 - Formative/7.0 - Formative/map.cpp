@@ -1,5 +1,6 @@
 #include "map.h"
 #include <iostream>
+#include "player.h"
 
 Map::Map()
 {
@@ -18,23 +19,54 @@ void Map::print_map()
 	}
 }
 
-bool Map::check_postion(int NewPosX, int NewPosY)
+int Map::check_obstacle(int newPosX, int newPosY)
 {
-	if (map_[NewPosY][NewPosX] == ' ')
+	switch (map_[newPosY][newPosX])
 	{
-		return true;
-	}
+		case ' ':
+		{
+			return 1;
+		}
 
-	else
-	{
-		return false;
+		case '+':
+		{
+			return 2;
+		}
+
+		case '-':
+		{
+			return 3;
+		}
+
+		default:
+		{
+			return 4;
+		}
 	}
 }
 
-void Map::set_new_player(bool isFree, int posX, int posY , int newPosX, int newPosY)
+void Map::set_new_player(int obstacle, int posX, int posY , int newPosX, int newPosY)
 {
-	if (isFree)
+	system("cls");
+	switch (obstacle)
 	{
-		std::swap(map_[posY][posX], map_[newPosY][newPosX]);
+		case 1:
+		{
+			map_[posY][posX] = ' ';
+			map_[newPosY][newPosX] = Sprite::player;
+		}
+
+		case 2:
+		{
+			map_[posY][posX] = ' ';
+			map_[newPosY][newPosX] = Sprite::player;
+		}
+
+		case 3:
+		{
+			map_[posY][posX] = ' ';
+			map_[newPosY][newPosX] = Sprite::player;
+		}
+
 	}
 }

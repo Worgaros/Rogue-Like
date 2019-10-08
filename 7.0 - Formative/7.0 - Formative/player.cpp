@@ -11,30 +11,58 @@ void Player::take_damages(int damage)
 
 void Player::take_heal(int heal)
 {
+	
 	health_points_ += heal;
 }
 
-void Player::set_new_position(bool isFree)
+void Player::set_new_position(int obstacle, int heal)
 {
 
-	if(userInput == 'w' && isFree)
+	if(userInput == 'w' || userInput == 's')
 	{
-		posY = newPosY;
+		switch (obstacle)
+		{
+			case 1:
+			{		
+				posY = newPosY;
+			}
+
+			case 2:
+			{
+				posY = newPosY;
+				take_heal(heal);
+			}
+
+			/*case 3:
+			{
+				posY = newPosY;
+				take_damages(damage);
+			}*/
+		}
+
 	}
 
-	else if (userInput == 's' && isFree)
+	else if (userInput == 'a' || userInput == 'd')
 	{
-		posY = newPosY;
-	}
+		switch (obstacle)
+		{
+		case 1:
+		{
+			posY = newPosY;
+		}
 
-	else if (userInput == 'a' && isFree)
-	{
-		posX = newPosX;
-	}
+		case 2:
+		{
+			posY = newPosY;
+			take_heal(heal);
+		}
 
-	else if (userInput == 'd' && isFree)
-	{
-		posX = newPosX;
+		/*case 3:
+		{
+			posY = newPosY;
+			take_damages(damage);
+		}*/
+		}
 	}
 
 	else
@@ -67,4 +95,9 @@ void Player::calc_new_pos()
 	{
 		newPosX -= 1;
 	}
+}
+
+void Player::print_health()
+{
+	std::cout << health_points_;
 }
