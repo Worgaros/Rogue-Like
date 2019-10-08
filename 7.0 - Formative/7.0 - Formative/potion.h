@@ -1,5 +1,4 @@
 #pragma once
-#include "sprite.h"
 
 class Potion
 {
@@ -7,6 +6,6 @@ class Potion
 		void heal_player();
 		
 	private:
-		int health_point_;
+		int healing_points_;
 };
 
