@@ -9,14 +9,17 @@ class Map
 	public:
 		Map();
 		void print_map();
+		bool check_postion(int NewPosX, int NewPosY);
+		void set_new_player(bool isFree, int posX, int posY, int newPosx, int NewPosY);
+	
 
 	private:
 		const char wall_ = Sprite::walls;
 		const char rocks_ = Sprite::rocks;
 		const char ground_ = Sprite::ground;
-		std::vector<std::vector<char> > map
+		std::vector<std::vector<char> > map_
 		{{wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_, wall_},
-		{wall_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, wall_},
+		{wall_, Sprite::player, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, wall_},
 		{wall_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, Sprite::trap, ground_, ground_, ground_, ground_, ground_, wall_},
 		{wall_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, wall_},
 		{wall_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, rocks_, rocks_, rocks_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, ground_, wall_},
