@@ -1,6 +1,9 @@
 #include "potion.h"
 
-void heal_player()
+Potion::Potion()
+{}
+
+int Potion::heal_player()
 {
-	
+	return healing_points_;
 }

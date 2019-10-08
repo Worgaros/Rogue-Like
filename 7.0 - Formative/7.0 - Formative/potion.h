@@ -3,9 +3,10 @@
 class Potion
 {
 	public:
-		void heal_player();
+		Potion();
+		int heal_player();
 		
 	private:
-		int healing_points_;
+		int healing_points_ = 1;
 };
 
