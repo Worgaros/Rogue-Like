@@ -1,6 +1,9 @@
 #include "trap.h"
 
-void make_damages()
+Trap::Trap()
+{}
+
+int Trap::make_damages()
 {
-	
+	return damage_points_;
 }

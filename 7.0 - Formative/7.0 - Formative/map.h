@@ -9,8 +9,8 @@ class Map
 	public:
 		Map();
 		void print_map();
-		bool check_postion(int NewPosX, int NewPosY);
-		void set_new_player(bool isFree, int posX, int posY, int newPosx, int NewPosY);
+		int check_obstacle(int NewPosX, int NewPosY);
+		void set_new_player_pos(int obstacle, int posX, int posY, int newPosx, int newPosY);
 	
 
 	private:
