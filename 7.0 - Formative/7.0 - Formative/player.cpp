@@ -15,9 +15,8 @@ void Player::take_heal(int heal)
 	health_points_ += heal;
 }
 
-void Player::set_new_position(int obstacle, int heal)
+void Player::set_new_position(int obstacle, int heal, int damage)
 {
-
 	if(userInput == 'w' || userInput == 's')
 	{
 		switch (obstacle)
@@ -25,48 +24,61 @@ void Player::set_new_position(int obstacle, int heal)
 			case 1:
 			{		
 				posY = newPosY;
+				break;
 			}
 
 			case 2:
 			{
 				posY = newPosY;
 				take_heal(heal);
+				break;
 			}
 
-			/*case 3:
+			case 3:
 			{
 				posY = newPosY;
 				take_damages(damage);
-			}*/
-		}
+				break;
+			}
 
+			default:
+			{
+				newPosY = posY;
+			}
+		}
+		newPosX = posX;
+		newPosY = posY;
 	}
 
 	else if (userInput == 'a' || userInput == 'd')
 	{
 		switch (obstacle)
 		{
-		case 1:
-		{
-			posY = newPosY;
-		}
+			case 1:
+			{
+				posX = newPosX;
+				break;
+			}
 
-		case 2:
-		{
-			posY = newPosY;
-			take_heal(heal);
-		}
+			case 2:
+			{
+				posX = newPosX;
+				take_heal(heal);
+				break;
+			}
 
-		/*case 3:
-		{
-			posY = newPosY;
-			take_damages(damage);
-		}*/
-		}
-	}
+			case 3:
+			{
+				posX = newPosX;
+				take_damages(damage);
+				break;
+			}
 
-	else
-	{
+			default:
+			{
+				
+			}
+		}
 		newPosX = posX;
 		newPosY = posY;
 	}
@@ -97,7 +109,17 @@ void Player::calc_new_pos()
 	}
 }
 
-void Player::print_health()
+void Player::print_player_stats()
 {
-	std::cout << health_points_;
+	std::cout << health_points_ << "\n";
+}
+
+void Player::death(bool& isRunning)
+{
+	if (health_points_ <= 0)
+	{
+		system("cls");
+		std::cout << "Game Over !\n";
+		isRunning = false;
+	}
 }

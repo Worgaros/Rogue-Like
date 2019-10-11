@@ -10,7 +10,7 @@ class Map
 		Map();
 		void print_map();
 		int check_obstacle(int NewPosX, int NewPosY);
-		void set_new_player(int obstacle, int posX, int posY, int newPosx, int NewPosY);
+		void set_new_player_pos(int obstacle, int posX, int posY, int newPosx, int newPosY);
 	
 
 	private:

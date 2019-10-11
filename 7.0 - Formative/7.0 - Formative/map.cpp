@@ -1,6 +1,5 @@
 #include "map.h"
 #include <iostream>
-#include "player.h"
 
 Map::Map()
 {
@@ -45,27 +44,30 @@ int Map::check_obstacle(int newPosX, int newPosY)
 	}
 }
 
-void Map::set_new_player(int obstacle, int posX, int posY , int newPosX, int newPosY)
+void Map::set_new_player_pos(int obstacle, int posX, int posY , int newPosX, int newPosY)
 {
 	system("cls");
 	switch (obstacle)
 	{
 		case 1:
 		{
-			map_[posY][posX] = ' ';
+			map_[posY][posX] = Sprite::ground;
 			map_[newPosY][newPosX] = Sprite::player;
+			break;
 		}
 
 		case 2:
 		{
-			map_[posY][posX] = ' ';
+			map_[posY][posX] = Sprite::ground;
 			map_[newPosY][newPosX] = Sprite::player;
+			break;
 		}
 
 		case 3:
 		{
-			map_[posY][posX] = ' ';
+			map_[posY][posX] = Sprite::ground;
 			map_[newPosY][newPosX] = Sprite::player;
+			break;
 		}
 
 	}

@@ -11,9 +11,10 @@ class Player
 		Player();
 		void take_damages(int damage);
 		void take_heal(int heal);
-		void set_new_position(int obstacle, int heal);
+		void set_new_position(int obstacle, int heal, int damage);
 		void calc_new_pos();
-		void print_health();
+		void print_player_stats();
+		void death(bool& isRunning);
 	
 	private:
 		int health_points_ = 3;

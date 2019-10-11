@@ -9,4 +9,3 @@ class Potion
 	private:
 		int healing_points_ = 1;
 };
-
