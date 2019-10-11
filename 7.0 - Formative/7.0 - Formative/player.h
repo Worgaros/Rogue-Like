@@ -15,6 +15,7 @@ class Player
 		void calc_new_pos();
 		void print_player_stats();
 		void death(bool& isRunning);
+		bool ask_take_potion(int heal);
 	
 	private:
 		int health_points_ = 3;

@@ -22,17 +22,17 @@ int Map::check_obstacle(int newPosX, int newPosY)
 {
 	switch (map_[newPosY][newPosX])
 	{
-		case ' ':
+		case Sprite::ground:
 		{
 			return 1;
 		}
 
-		case '+':
+		case Sprite::potion :
 		{
 			return 2;
 		}
 
-		case '-':
+		case Sprite::trap:
 		{
 			return 3;
 		}
