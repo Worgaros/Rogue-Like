@@ -19,6 +19,7 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 {
 	if(userInput == 'w' || userInput == 's')
 	{
+		bool askAgain = true;
 		switch (obstacle)
 		{
 			case 1:
@@ -29,8 +30,11 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 
 			case 2:
 			{
-				posY = newPosY;
-				take_heal(heal);
+				posX = newPosX;
+				while (askAgain)
+				{
+					askAgain = ask_take_potion(heal);
+				}
 				break;
 			}
 
@@ -52,6 +56,7 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 
 	else if (userInput == 'a' || userInput == 'd')
 	{
+		bool askAgain = true;
 		switch (obstacle)
 		{
 			case 1:
@@ -63,7 +68,10 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 			case 2:
 			{
 				posX = newPosX;
-				take_heal(heal);
+				while (askAgain)
+				{
+					askAgain = ask_take_potion(heal);
+				}
 				break;
 			}
 
@@ -122,4 +130,38 @@ void Player::death(bool& isRunning)
 		std::cout << "Game Over !\n";
 		isRunning = false;
 	}
+}
+
+bool Player::ask_take_potion(int heal)
+{
+	char userInput;
+	std::cout << "Would you take the potion ?\ny = Yes\nn = No\n";
+	std::cin >> userInput;
+
+	switch (userInput)
+	{
+		case 'y':
+		{
+			take_heal(heal);
+			system("cls");
+			return false;
+		}
+
+		case 'n':
+		{
+			std::cout << "The potion disappears\n";
+			system("pause");
+			system("cls");
+			return false;
+		}
+
+		default:
+		{
+			std::cout << "Invalid choice !\n";
+			system("pause");
+			system("cls");
+			return true;
+		}
+	}
+	
 }
