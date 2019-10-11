@@ -30,7 +30,7 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 
 			case 2:
 			{
-				posX = newPosX;
+				posY = newPosY;
 				while (askAgain)
 				{
 					askAgain = ask_take_potion(heal);
@@ -50,8 +50,6 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 				newPosY = posY;
 			}
 		}
-		newPosX = posX;
-		newPosY = posY;
 	}
 
 	else if (userInput == 'a' || userInput == 'd')
@@ -84,11 +82,9 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 
 			default:
 			{
-				
+				newPosX = posX;
 			}
 		}
-		newPosX = posX;
-		newPosY = posY;
 	}
 }
 
