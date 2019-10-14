@@ -1,18 +1,19 @@
 #pragma once
+#include <iostream>
 
 class Player
 {
 	public:
 		int posX = 1;
-		int posY = 1;
-		int newPosX = 1;
-		int newPosY = 1;
-		char userInput = ' ';
+		int posY = 2;
+		int newPosX = posX;
+		int newPosY = posY;
+		std::string userInput;
 		Player();
 		void take_damages(int damage);
 		void take_heal(int heal);
 		void set_new_position(int obstacle, int heal, int damage);
-		void calc_new_pos();
+		bool calc_new_pos();
 		void print_player_stats();
 		void death(bool& isRunning);
 		bool ask_take_potion(int heal);
