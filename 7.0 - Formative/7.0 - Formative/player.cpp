@@ -17,7 +17,7 @@ void Player::take_heal(int heal)
 
 void Player::set_new_position(int obstacle, int heal, int damage)
 {
-	if(userInput == 'w' || userInput == 's')
+	if(userInput == "w" || userInput == "s")
 	{
 		bool askAgain = true;
 		switch (obstacle)
@@ -52,7 +52,7 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 		}
 	}
 
-	else if (userInput == 'a' || userInput == 'd')
+	else if (userInput == "a" || userInput == "d")
 	{
 		bool askAgain = true;
 		switch (obstacle)
@@ -88,28 +88,47 @@ void Player::set_new_position(int obstacle, int heal, int damage)
 	}
 }
 
-void Player::calc_new_pos()
+bool Player::calc_new_pos()
 {
 	std::cin >> userInput;
 	
-	if (userInput == 'w')
+	if (userInput == "w")
 	{
 		newPosY -= 1;
+		return false;
 	}
 
-	if (userInput == 's')
+	else if (userInput == "s")
 	{
 		newPosY += 1;
+		return false;
 	}
 	
-	if (userInput == 'd')
+	else if (userInput == "d")
 	{
 		newPosX += 1;
+		return false;
 	}
 	
-	if (userInput == 'a')
+	else if (userInput == "a")
 	{
 		newPosX -= 1;
+		return false;
+	}
+
+	else if (userInput == "lumos")
+	{
+		system("cls");
+		std::cout << "CHEAT CODE ACTIVATED !\n\n";
+		system("pause");
+		return true;
+	}
+
+	else
+	{
+		std::cout << "Invalid choice !\n";
+		system("pause");
+		return false;
 	}
 }
 

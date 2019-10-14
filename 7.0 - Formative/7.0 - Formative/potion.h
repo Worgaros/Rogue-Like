@@ -7,5 +7,5 @@ class Potion
 		int heal_player();
 		
 	private:
-		int healing_points_ = 1;
+		int healing_points_ = 5;
 };
