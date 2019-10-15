@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7.0 - Formative", "7.0 - Formative\7.0 - Formative.vcxproj", "{A6E536C2-E8C8-4FC1-A032-15442A1C9325}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Debug|x64.ActiveCfg = Debug|x64
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Debug|x64.Build.0 = Debug|x64
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Debug|x86.ActiveCfg = Debug|Win32
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Debug|x86.Build.0 = Debug|Win32
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Release|x64.ActiveCfg = Release|x64
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Release|x64.Build.0 = Release|x64
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Release|x86.ActiveCfg = Release|Win32
+		{A6E536C2-E8C8-4FC1-A032-15442A1C9325}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBD2298F-6E24-4B12-B7E4-69AD05E93F72}
+	EndGlobalSection
+EndGlobal
